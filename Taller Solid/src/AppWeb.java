@@ -1,4 +1,4 @@
-public class AppWeb {
+public class AppWeb<BD> {
     private final Autenticador aut;
     private final BD bd;
 
