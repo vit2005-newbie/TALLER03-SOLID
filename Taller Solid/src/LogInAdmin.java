@@ -1,17 +1,32 @@
-public class LogInAdmin extends LogIn {
-    private boolean userIsAdmin;
+// 3. Login para administradores
+public class LogInAdmin implements ILogin {
+    private MySQL mySQL;
+
+    public LogInAdmin(MySQL mySQL) {
+        this.mySQL = mySQL;
+    }
+
     @Override
-    public void log (User user) {
-        this.userIsAdmin = verifyIfTheUserIsAdmin(user);
-        if(!userIsAdmin){
+    public void log(User user) {
+        // Verificación
+        if (!verifyIfTheUserIsAdmin(user)) {
+            System.out.println("Access denied: user is not admin");
             return;
         }
+
+        // Autenticación
         System.out.println("Has access to the website in admin mode");
-        // Logic
+
+        // Inserción 
+        insertUserInDatabase(user);
     }
+
     private boolean verifyIfTheUserIsAdmin(User user){
-        // Do something
+        // Verifica usuario
         return true;
     }
-}
 
+    private void insertUserInDatabase(User user){
+
+    }
+}
