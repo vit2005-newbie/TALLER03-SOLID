@@ -1,15 +1,9 @@
 public class AppWeb {
-    LogIn logIn;
-    LogInAdmin logInAdmin;
-    MySQL mySQL;
-    public AppWeb (LogIn logIn, MySQL mySQL) {
-        // Logic
-    }
-    public AppWeb (LogInAdmin logInAdmin, MySQL mySQL) {
-        // Logic
-    }
-    public void connectToDatabase (MySQL mySQL) {
-        // Logic
+    private final Autenticador aut;
+    private final BD bd;
+
+    public AppWeb(Autenticador aut, BD bd) {
+        this.aut = aut;
+        this.bd = bd;
     }
 }
-
